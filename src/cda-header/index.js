@@ -1,17 +1,28 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	RichText,
+	BlockControls,
+	HeadingLevelDropdown
+} from '@wordpress/block-editor';
 import metadata from './block.json';
 
 registerBlockType(metadata.name, {
 	edit: ({ attributes, setAttributes }) => {
-		let { text, idHeader } = attributes;
+		let { text, idHeader, level } = attributes;
 		const changeText = (newText) => {
 			let newIdHeader = newText.toLowerCase().replace(/\s+/g, '-');
 			setAttributes({ text: newText, idHeader: newIdHeader })
 		}
 		return (
 			<>
+				<BlockControls >
+					<HeadingLevelDropdown
+						value={level}
+						onChange={(newLevel) => setAttributes({ level: newLevel })}
+					/>
+				</BlockControls>
 				<RichText {...useBlockProps()}
 					onChange={changeText}
 					value={text}
@@ -24,7 +35,14 @@ registerBlockType(metadata.name, {
 			</>
 		);
 	},
-	save: () => {
-        return null;
-    },
+	save: ({ attributes }) => {
+		const { text, level } = attributes;
+		const TagName = 'h' + level;
+
+		return (
+			<TagName {...useBlockProps.save()} data-cda="bm">
+				<RichText.Content value={text} />
+			</TagName>
+		)
+	}
 });
