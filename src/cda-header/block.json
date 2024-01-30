@@ -24,7 +24,11 @@
         },
         "idHeader": {
             "type": "string"
-        }
+        },
+		"level": {
+			"type": "number",
+			"default": 2
+		}
 	},
     "example": {
         "attributes": {
@@ -34,6 +38,5 @@
     },
 	"textdomain": "cda-block",
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./style.css",
-	"render": "file:./render.php"
+	"editorStyle": "file:./style.css"
 }
