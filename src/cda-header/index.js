@@ -36,11 +36,11 @@ registerBlockType(metadata.name, {
 		);
 	},
 	save: ({ attributes }) => {
-		const { text, level } = attributes;
+		const { text, level, idHeader } = attributes;
 		const TagName = 'h' + level;
 
 		return (
-			<TagName {...useBlockProps.save()} data-cda="bm">
+			<TagName {...useBlockProps.save()} data-cda="bm" id={idHeader}>
 				<RichText.Content value={text} />
 			</TagName>
 		)
