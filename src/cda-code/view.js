@@ -1,0 +1,21 @@
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import java from 'highlight.js/lib/languages/java';
+import php from 'highlight.js/lib/languages/php';
+import json from 'highlight.js/lib/languages/json';
+import xml from 'highlight.js/lib/languages/xml';
+import css from 'highlight.js/lib/languages/css';
+
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('java', java);
+hljs.registerLanguage('php', php);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('css', css);
+hljs.highlightAll();
+
+document.querySelectorAll('.cda-copy-code').forEach( btnCopy => {
+    btnCopy.addEventListener('click', (e) => {
+        navigator.clipboard.writeText(e.target.dataset.cdaCode);
+    });
+});

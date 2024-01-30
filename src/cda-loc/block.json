@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/cda-loc",
+	"version": "0.1.0",
+	"title": "Cda LOC",
+	"category": "text",
+	"icon": "editor-ul",
+	"description": "Codingduluaja List of Content",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "cda-loc",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./style.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

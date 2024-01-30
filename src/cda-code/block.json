@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/cda-code",
+	"version": "0.1.0",
+	"title": "Cda Code",
+	"category": "text",
+	"icon": "editor-code",
+	"description": "Styling Code",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+        "code": {
+            "type": "string"
+        },
+		"language": {
+            "type": "string"
+        }
+	},
+	"textdomain": "cda-block",
+	"editorScript": "file:./index.js",
+	"style": "file:./index.css",
+	"viewScript": "file:./view.js"
+}
