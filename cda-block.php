@@ -50,7 +50,7 @@ add_action( 'init', 'resister_cda_meta_index' );
 function cda_override_robots_filter(array $robots) {
     // var_dump( $args);
     if(is_home()) {
-        $robots['noindex'] = true;
+        // $robots['noindex'] = true;
     } else if(is_single() || is_page()) {
         global $post;
         $isIndexed = get_post_meta($post->ID, 'cda_meta_index', true);
