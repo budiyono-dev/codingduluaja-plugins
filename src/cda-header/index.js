@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { registerBlockType } from '@wordpress/blocks';
+import { registerBlockType, createBlock, getDefaultBlockName } from '@wordpress/blocks';
 import {
 	useBlockProps,
 	RichText,
@@ -9,7 +9,7 @@ import {
 import metadata from './block.json';
 
 registerBlockType(metadata.name, {
-	edit: ({ attributes, setAttributes }) => {
+	edit: ({ attributes, setAttributes, mergeBlocks, onReplace, clientId }) => {
 		let { text, idHeader, level } = attributes;
 		const changeText = (newText) => {
 			let newIdHeader = newText.toLowerCase().replace(/\s+/g, '-');
@@ -30,6 +30,30 @@ registerBlockType(metadata.name, {
 					id={idHeader}
 					tagName="h2"
 					placeholder={__('Tambahkan Judul')}
+					onSplit={ ( value, isOriginal ) => {
+						let block;
+	
+						if ( isOriginal || value ) {
+							block = createBlock( 'create-block/cda-block', {
+								...attributes,
+								content: value,
+							} );
+						} else {
+							block = createBlock(
+								getDefaultBlockName() ?? 'create-block/cda-block'
+							);
+						}
+	
+						if ( isOriginal ) {
+							block.clientId = clientId;
+						}
+	
+						return block;
+					} }
+					onMerge={mergeBlocks}
+					onReplace={onReplace}
+					onRemove={() => onReplace([])}
+					
 				>
 				</RichText>
 			</>

@@ -5,6 +5,7 @@ import php from 'highlight.js/lib/languages/php';
 import json from 'highlight.js/lib/languages/json';
 import xml from 'highlight.js/lib/languages/xml';
 import css from 'highlight.js/lib/languages/css';
+import plaintext from 'highlight.js/lib/languages/plaintext';
 
 const doHighlight = () => {
     hljs.registerLanguage('javascript', javascript);
@@ -13,6 +14,7 @@ const doHighlight = () => {
     hljs.registerLanguage('json', json);
     hljs.registerLanguage('xml', xml);
     hljs.registerLanguage('css', css);
+    hljs.registerLanguage('plaintext', plaintext);
     hljs.highlightAll();
 }
 
