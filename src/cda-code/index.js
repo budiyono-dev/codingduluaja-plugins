@@ -52,6 +52,10 @@ registerBlockType(metadata.name, {
                                     {
                                         label: 'CSS',
                                         value: 'css'
+                                    },
+                                    {
+                                        label: 'Plaintext',
+                                        value: 'plaintext'
                                     }
                                 ]}
                             />

@@ -16,7 +16,8 @@
 		},
 		"typography": {
 			"fontSize": true
-		}
+		},
+		"__experimentalSlashInserter": true
 	},
 	"attributes": {
         "text": {
