@@ -41,6 +41,7 @@ function resister_cda_meta_index() {
         'show_in_rest' => true,
         'single' => true,
         'type' => 'boolean',
+		'default' => true,
     );
     register_post_meta( 'post', 'cda_meta_index', $args);
     register_post_meta( 'page', 'cda_meta_index', $args);
@@ -60,7 +61,7 @@ function cda_override_robots_filter(array $robots) {
         return $robots;
     } else if(is_archive() || is_category() || is_search() || is_404() || is_tag()){
         $robots['noindex'] = true;
-    } 
+    }
     return $robots;
 }
 add_filter('wp_robots', 'cda_override_robots_filter');

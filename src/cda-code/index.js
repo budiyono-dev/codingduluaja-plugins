@@ -56,6 +56,10 @@ registerBlockType(metadata.name, {
                                     {
                                         label: 'Plaintext',
                                         value: 'plaintext'
+                                    },
+									{
+                                        label: 'SQL',
+                                        value: 'sql'
                                     }
                                 ]}
                             />
