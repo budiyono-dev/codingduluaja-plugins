@@ -19,11 +19,13 @@ const doHighlight = () => {
     hljs.registerLanguage('sql', sql);
     hljs.highlightAll();
 }
-
-document.querySelectorAll('.cda-copy-code').forEach( btnCopy => {
-    btnCopy.addEventListener('click', (e) => {
-        navigator.clipboard.writeText(e.target.dataset.cdaCode);
-    });
-});
-
+//
+// document.querySelectorAll('.cda-copy-code').forEach( btnCopy => {
+//     btnCopy.addEventListener('click', (e) => {
+//         navigator.clipboard.writeText(e.target.dataset.cdaCode);
+//     });
+// });
+//
 document.addEventListener('DOMContentLoaded', doHighlight);
+
+

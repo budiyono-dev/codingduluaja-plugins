@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "create-block/cda-code",
 	"version": "0.1.0",
-	"title": "Cda Code",
+	"title": "Simple Code Highlighter",
 	"category": "text",
 	"icon": "editor-code",
 	"description": "Styling Code",
@@ -22,5 +22,6 @@
 	"textdomain": "cda-block",
 	"editorScript": "file:./index.js",
 	"style": "file:./index.css",
-	"viewScript": "file:./view.js"
+	"viewScript": "file:./view.js",
+	"viewStyle": "file:./style.php"
 }
